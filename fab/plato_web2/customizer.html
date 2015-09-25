@@ -1,0 +1,141 @@
+<html>
+
+ <head>
+   <link rel="icon" type="image/png" href="static/favicon.png" />
+   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+   <title>Fab App Engine</title>
+
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--   <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" /> -->
+   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+   <script src="static/jquery.ddslick.min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.js"></script>
+   <script src="static/Detector.js"></script>
+   <script src="static/stats.min.js"></script>
+
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+   <script src="static/src.js"></script>
+   <script src="static/OrbitControls.js"></script>
+  <!-- <script src="static/InterleavedBufferGeometry.js"></script>
+   <script src="static/WebGLRenderer.js"></script>-->
+
+   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+   <link rel="stylesheet" type="text/css" href="static/style.css" />
+
+   <script id="vertexShader" type="x-shader/x-vertex">
+     varying vec3 vPosition;
+
+     void main() {
+       gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+       vPosition = vec3(gl_Position[0], gl_Position[1], gl_Position[2]);
+     }
+   </script>
+
+   <script type="text/javascript">
+     var mesh_view = new MeshView();
+     var controller = new Controller(mesh_view, true);
+     var stats = null;
+
+     $(document).ready(function() {
+       mesh_view.initRendering();
+       controller.init();
+       controller.initMaterials($("#materials"));
+       controller.setWeightDisplay($("#weight"));
+       controller.setCostDisplay($("#cost"));
+
+       stats = new TaskStats();
+       stats.init($("#userstudy"));
+
+       $("#meshbutton").click(function() {
+         UpdateMeshLink();
+       });
+     });
+   </script>
+ </head>
+
+ <body>
+   <nav class="navbar navbar-default navbar-static-top" role="navigation">
+     <div class="container-fluid">
+       <a href="/"><div class="my-header-elem">
+           <span><img src="static/favicon.png" /></span>
+       </div></a>
+
+       <div class="my-header-elem" id="name"></div>
+      </div><!-- /.container-fluid -->
+
+     <div id="userstudy" style="display:none;">
+       <button id="taskstart">StartTask</button>
+       <button id="taskend">EndTask</button>
+       <div id="taskinfo"></div>
+     </div>
+    </nav>
+
+
+    <div> <!-- class="container-fluid"> -->
+      <div class="main">
+<!--        <div class="loading-indicator">
+          Loading Mesh ...
+        </div>-->
+        <div id="preview-window">
+          <canvas id="valid-overlay"
+                  width="1034" height="668">
+          </canvas>
+          <div style="display:none;" id="pt-handle" class="pt-control"></div>
+        </div>
+
+        <div class="topbar">
+          <div id="seeds" class="panel panel-default" style="display:none;">
+            <div class="panel-heading">
+              <div class="plusminus" id="plusmin1" onclick="expandCollapse('plusmin1');">+</div>
+              Quick Designs
+            </div>
+            <div class="panel-body" id="plusmin1-cont" style="display:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="plusminus" id="plusmin2" onclick="expandCollapse('plusmin2');">-</div>
+            Controls
+          </div>
+          <div class="panel-body" id="plusmin2-cont">
+            <!-- vars corresponds to ControlsController: scope.vars -->
+            <div id="controls" class="var"></div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="plusminus" id="plusmin3" onclick="expandCollapse('plusmin3');">-</div>
+            Material &amp; Cost
+          </div>
+          <div class="panel-body" id="plusmin3-cont">
+            <div class="costs">
+              <div class="name"> Estimated cost: <span>$<span id="cost">0.00</span></span></div>
+              <div class="name"> Estimated weight: <span><span id="weight">0.00</span>g</span></div>
+            </div>
+            <div id="materials">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="plusminus" id="plusmin4" onclick="expandCollapse('plusmin4');">+</div>
+            Save Model
+          </div>
+          <div class="panel-body" id="plusmin4-cont" style="display:none">
+            <a href="" id="obj">model.obj</a>
+            <button id="meshbutton">UpdateLink</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+
+</html><html>

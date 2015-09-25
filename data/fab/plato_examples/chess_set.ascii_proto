@@ -1,0 +1,4337 @@
+name: "Chess Set"
+root_op {
+  op {
+    [mit_plato.TranslateOpSpec.spec] {
+      translation {
+        x: 17.5
+      }
+    }
+  }
+  name: "TranslatePawn"
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "Pawn"
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            x: 0
+            y: 2.9500164578776103
+          }
+        }
+      }
+      name: "TranslatePawnHead"
+      child {
+        op {
+          [mit_plato.ScaleOpSpec.spec] {
+            scale: 0.75
+          }
+        }
+        name: "ScalePawnSphere"
+        child {
+          op {
+            [mit_plato.OpenscadCreateOpSpec.spec] {
+              program_file: ""
+              program: "sphere(r=1, $fa=5, $fs=0.1);"
+            }
+          }
+          name: "PawnSphere"
+        }
+      }
+    }
+    child {
+      op {
+        [mit_plato.ScaleOpSpec.spec] {
+          scale: 0.80000000000000027
+        }
+      }
+      name: "ScalePawnBody"
+      child {
+        op {
+          [mit_plato.UnionOpSpec.spec] {
+          }
+        }
+        name: "UnionPawnBodyAndBase"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreateCircleSpec.spec] {
+                  radius: 1
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 1
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          name: "PawnBase"
+        }
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: 0.10000000000000005
+              }
+            }
+          }
+          name: "TranslatePawnBody"
+          child {
+            op {
+              [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+                is_solid: true
+                base_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreatePolygonSpec.spec] {
+                    n_sides: 19
+                    radius: 1
+                  }
+                }
+                vertical_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreateHermiteSpec.spec] {
+                    curve {
+                      control_pt {
+                        pt {
+                          x: 1
+                          y: 0
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.5220525215581511
+                          y: 0.39460619377427181
+                          z: 0
+                        }
+                        vec {
+                          x: 0.16340852490395131
+                          y: 0.36380466064030953
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0.16340852490395131
+                          y: 0.36380466064030953
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.3268170498079027
+                          y: 0.72760932128061906
+                          z: 0
+                        }
+                        vec {
+                          x: -0.034006815595741479
+                          y: 0.2834678076334205
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.034006815595741479
+                          y: 0.2834678076334205
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.4540388903666682
+                          y: 0.96154180904111287
+                          z: 0
+                        }
+                        vec {
+                          x: -0.14745924122546927
+                          y: 0.35148863632927835
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.14745924122546927
+                          y: 0.35148863632927835
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.0318985673569641
+                          y: 1.4305865939391758
+                          z: 0
+                        }
+                        vec {
+                          x: -0.28201944518333404
+                          y: 0.32922909547944363
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.28201944518333404
+                          y: 0.32922909547944363
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.89000000000000002
+                          y: 1.6200000000000002
+                          z: 0
+                        }
+                        vec {
+                          x: -0.21082861706151101
+                          y: 0.24770838547116237
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.21082861706151101
+                          y: 0.24770838547116237
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.61024133323394203
+                          y: 1.9510058839599501
+                          z: 0
+                        }
+                        vec {
+                          x: -0.16761757580275388
+                          y: 0.38250324984375084
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.16761757580275388
+                          y: 0.38250324984375084
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.55476484839449225
+                          y: 2.4475105723470128
+                          z: 0
+                        }
+                        vec {
+                          x: 0.20487933338302922
+                          y: 0.42450256740300064
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0.20487933338302922
+                          y: 0.42450256740300064
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.0200000000000005
+                          y: 2.8375135723470129
+                          z: 0
+                        }
+                        vec {
+                          x: -0.017382424197246004
+                          y: 0.28500150000000013
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.017382424197246004
+                          y: 0.28500150000000013
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.52000000000000024
+                          y: 3.0175155723470129
+                          z: 0
+                        }
+                        vec {
+                          x: -0.24186365660932901
+                          y: 0.26500100000000027
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.24186365660932901
+                          y: 0.26500100000000027
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.53627268678134244
+                          y: 3.3675175723470128
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                    }
+                    force_catmull_rom: true
+                    tension: 0.29999999999999999
+                  }
+                }
+              }
+            }
+            name: "PawnBody"
+          }
+        }
+      }
+    }
+  }
+}
+root_op {
+  op {
+    [mit_plato.TranslateOpSpec.spec] {
+      translation {
+        x: 14
+      }
+    }
+  }
+  name: "TranslateRook"
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "Rook"
+    child {
+      op {
+        [mit_plato.UnionOpSpec.spec] {
+        }
+      }
+      name: "UnionRookBodyAndBase"
+      child {
+        op {
+          [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+            is_solid: true
+            base_curve {
+              encoded_transform: ""
+              [mit_plato.CreateCircleSpec.spec] {
+                radius: 1
+              }
+            }
+            vertical_curve {
+              encoded_transform: ""
+              [mit_plato.CreateHermiteSpec.spec] {
+                curve {
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 0
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 1
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        name: "RookBase"
+      }
+      child {
+        op {
+          [mit_plato.TranslateOpSpec.spec] {
+            translation {
+              y: 0.10000000000000008
+            }
+          }
+        }
+        name: "TranslateRookBody"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreatePolygonSpec.spec] {
+                  n_sides: 19
+                  radius: 1
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.5220525215581509
+                        y: 0.39460619377427176
+                        z: 0
+                      }
+                      vec {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.3268170498079027
+                        y: 0.72760932128061895
+                        z: 0
+                      }
+                      vec {
+                        x: -0.034006815595741368
+                        y: 0.2834678076334205
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.034006815595741368
+                        y: 0.2834678076334205
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.4540388903666682
+                        y: 0.96154180904111275
+                        z: 0
+                      }
+                      vec {
+                        x: -0.090151514896309126
+                        y: 0.34814353346732863
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.090151514896309126
+                        y: 0.34814353346732863
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.1465140200152844
+                        y: 1.4238963882152762
+                        z: 0
+                      }
+                      vec {
+                        x: -0.24622324324144079
+                        y: 0.36062241578847043
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.24622324324144079
+                        y: 0.36062241578847043
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.96159240388378653
+                        y: 1.6827866406180537
+                        z: 0
+                      }
+                      vec {
+                        x: -0.14325601001458654
+                        y: 0.78805097244097378
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.14325601001458654
+                        y: 0.78805097244097378
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.85965598954996781
+                        y: 3.0583371870768286
+                        z: 0
+                      }
+                      vec {
+                        x: 0.17342903206304589
+                        y: 0.88361034623958513
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0.17342903206304589
+                        y: 0.88361034623958513
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.3084504680098783
+                        y: 3.5083461870768283
+                        z: 0
+                      }
+                      vec {
+                        x: -0.13966435768317114
+                        y: 0.35000600000000004
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.13966435768317114
+                        y: 0.35000600000000004
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.58067328461976898
+                        y: 3.7583501870768284
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                  force_catmull_rom: true
+                  tension: 0.29999999999999999
+                }
+              }
+            }
+          }
+          name: "RookBody"
+        }
+      }
+    }
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            y: 3.6583471870768288
+          }
+        }
+      }
+      name: "TranslateRookHead"
+      child {
+        op {
+          [mit_plato.SubtractOpSpec.spec] {
+          }
+        }
+        name: "RookHeadSubtract"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              thickness: 0.2000000000000001
+              is_solid: false
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreatePolygonSpec.spec] {
+                  n_sides: 19
+                  radius: 1.2000000000000007
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0.60000000000000032
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          name: "RookHead"
+        }
+        child {
+          op {
+            [mit_plato.ForOpSpec.spec] {
+              var_name: "i"
+              n_iterations: 6
+              assignment {
+                var {
+                  kind: PARAM
+                  name_space: "RotateRookBoxCut"
+                  name: "degrees"
+                }
+                expr: "360 / $1 * $0"
+              }
+            }
+          }
+          name: "RookBoxCutLoop"
+          child {
+            op {
+              [mit_plato.RotateOpSpec.spec] {
+                axis {
+                  y: 1
+                }
+                degrees: 300
+              }
+            }
+            name: "RotateRookBoxCut"
+            child {
+              op {
+                [mit_plato.TranslateOpSpec.spec] {
+                  translation {
+                    y: 0.30000000000000016
+                    z: 1
+                  }
+                }
+              }
+              name: "TranslateRookBoxCut"
+              child {
+                op {
+                  [mit_plato.ScaleOpSpec.spec] {
+                    scale: 0.45000000000000018
+                  }
+                }
+                name: "ScaleRookBoxCut"
+                child {
+                  op {
+                    [mit_plato.TranslateOpSpec.spec] {
+                      translation {
+                        x: -0.5
+                        z: -0.5
+                      }
+                    }
+                  }
+                  name: "Translate1"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "cube([1,1,1]);"
+                      }
+                    }
+                    name: "RookBoxCut"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+root_op {
+  op {
+    [mit_plato.TranslateOpSpec.spec] {
+      translation {
+        x: 10.5
+      }
+    }
+  }
+  name: "TranslateKnight"
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "Knight"
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            x: 0.10000000000000008
+            y: 1.5624804689941381
+          }
+        }
+      }
+      name: "TranslateKnightHead"
+      child {
+        op {
+          [mit_plato.ScaleOpSpec.spec] {
+            scale: 0.12000000000000004
+          }
+        }
+        name: "ScaleHorse"
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: -19
+              }
+            }
+          }
+          name: "TranslateHorse"
+          child {
+            op {
+              [mit_plato.SmoothOpSpec.spec] {
+                lambda: 0.69999999999999996
+              }
+            }
+            name: "SmoothHorse"
+            child {
+              op {
+                [mit_plato.ImportMeshOpSpec.spec] {
+                  filename: "fab/meshes/knight_head.obj"
+                }
+              }
+              name: "Horse"
+            }
+          }
+        }
+      }
+    }
+    child {
+      op {
+        [mit_plato.UnionOpSpec.spec] {
+        }
+      }
+      name: "UnionKnightBodyAndBase"
+      child {
+        op {
+          [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+            is_solid: true
+            base_curve {
+              encoded_transform: ""
+              [mit_plato.CreateCircleSpec.spec] {
+                radius: 1
+              }
+            }
+            vertical_curve {
+              encoded_transform: ""
+              [mit_plato.CreateHermiteSpec.spec] {
+                curve {
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 0
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 1
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        name: "KnightBase"
+      }
+      child {
+        op {
+          [mit_plato.TranslateOpSpec.spec] {
+            translation {
+              y: 0.10000000000000005
+            }
+          }
+        }
+        name: "TranslateKnightBody"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreatePolygonSpec.spec] {
+                  n_sides: 19
+                  radius: 1
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.5220525215581509
+                        y: 0.39460619377427176
+                        z: 0
+                      }
+                      vec {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.3268170498079027
+                        y: 0.72760932128061895
+                        z: 0
+                      }
+                      vec {
+                        x: -0.012093814992412021
+                        y: 0.301985180668575
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.012093814992412021
+                        y: 0.301985180668575
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.4978648915733269
+                        y: 0.99857655511142174
+                        z: 0
+                      }
+                      vec {
+                        x: -0.13839352490395129
+                        y: 0.27620533937149594
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.13839352490395129
+                        y: 0.27620533937149594
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.050038615245609
+                        y: 1.2806199141214996
+                        z: 0
+                      }
+                      vec {
+                        x: -0.11893244578666317
+                        y: 0.35070663916164974
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.11893244578666317
+                        y: 0.35070663916164974
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.2600000000000005
+                        y: 1.7458178439811172
+                        z: 0
+                      }
+                      vec {
+                        x: -0.073626999226497125
+                        y: 0.30998475004027726
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.073626999226497125
+                        y: 0.30998475004027726
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.90277600154700577
+                        y: 1.962483468994138
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                  force_catmull_rom: true
+                  tension: 0.29999999999999999
+                }
+              }
+            }
+          }
+          name: "KnightBody"
+        }
+      }
+    }
+  }
+}
+root_op {
+  op {
+    [mit_plato.TranslateOpSpec.spec] {
+      translation {
+        x: 7
+      }
+    }
+  }
+  name: "TranslateOff"
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "Officer"
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            y: 2.1750078124023454
+          }
+        }
+      }
+      name: "TranslateOffHead"
+      child {
+        op {
+          [mit_plato.UnionOpSpec.spec] {
+          }
+        }
+        name: "OffHeadUnion"
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: 2.3000000000000012
+              }
+            }
+          }
+          name: "TranslateOffSphere"
+          child {
+            op {
+              [mit_plato.ScaleOpSpec.spec] {
+                scale: 0.30000000000000016
+              }
+            }
+            name: "ScaleOffSphere"
+            child {
+              op {
+                [mit_plato.OpenscadCreateOpSpec.spec] {
+                  program_file: ""
+                  program: "sphere(r=1, $fa=5, $fs=0.2);"
+                }
+              }
+              name: "OffSphere"
+            }
+          }
+        }
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              thickness: 0.2000000000000001
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreatePolygonSpec.spec] {
+                  n_sides: 19
+                  radius: 0.5
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 0.73124636325639603
+                        y: 0.04301449026463812
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.1529655849810732
+                        y: 0.29891699175817
+                        z: 0
+                      }
+                      vec {
+                        x: 0.061401109105532703
+                        y: 0.28808535347435677
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0.061401109105532703
+                        y: 0.28808535347435677
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.85404858146746144
+                        y: 0.61918519721335164
+                        z: 0
+                      }
+                      vec {
+                        x: -0.021351214536686535
+                        y: 0.37364623969771261
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.021351214536686535
+                        y: 0.37364623969771261
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.1102631559077001
+                        y: 1.0462094711535952
+                        z: 0
+                      }
+                      vec {
+                        x: -0.085404858146745865
+                        y: 0.48040230818277325
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.085404858146745865
+                        y: 0.48040230818277325
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.68323886517396971
+                        y: 1.5799898135788982
+                        z: 0
+                      }
+                      vec {
+                        x: -0.40567307619704429
+                        y: 0.59783398351633988
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.40567307619704429
+                        y: 0.59783398351633988
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.29891700351361151
+                        y: 2.241877438186275
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                  force_catmull_rom: true
+                  tension: 0.29999999999999999
+                }
+              }
+            }
+          }
+          name: "OffNeck"
+        }
+      }
+    }
+    child {
+      op {
+        [mit_plato.ScaleOpSpec.spec] {
+          scale: 0.90000000000000036
+        }
+      }
+      name: "ScaleOffBody"
+      child {
+        op {
+          [mit_plato.UnionOpSpec.spec] {
+          }
+        }
+        name: "UnionOffBodyAndBase"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreateCircleSpec.spec] {
+                  radius: 1
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 1
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          name: "OffBase"
+        }
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: 0.10000000000000005
+              }
+            }
+          }
+          name: "TranslateOffBody"
+          child {
+            op {
+              [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+                is_solid: true
+                base_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreatePolygonSpec.spec] {
+                    n_sides: 19
+                    radius: 1
+                  }
+                }
+                vertical_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreateHermiteSpec.spec] {
+                    curve {
+                      control_pt {
+                        pt {
+                          x: 1
+                          y: 0
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.5220525215581511
+                          y: 0.39460619377427181
+                          z: 0
+                        }
+                        vec {
+                          x: 0.16340852490395131
+                          y: 0.36380466064030953
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0.16340852490395131
+                          y: 0.36380466064030953
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.3268170498079027
+                          y: 0.72760932128061906
+                          z: 0
+                        }
+                        vec {
+                          x: -0.034006815595741479
+                          y: 0.2834678076334205
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.034006815595741479
+                          y: 0.2834678076334205
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.4540388903666682
+                          y: 0.96154180904111287
+                          z: 0
+                        }
+                        vec {
+                          x: -0.14745924122546927
+                          y: 0.35148863632927835
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.14745924122546927
+                          y: 0.35148863632927835
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.0318985673569641
+                          y: 1.4305865939391758
+                          z: 0
+                        }
+                        vec {
+                          x: -0.28142688200647031
+                          y: 0.3283313494286449
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.28142688200647031
+                          y: 0.3283313494286449
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.89118512635372749
+                          y: 1.6182045078984027
+                          z: 0
+                        }
+                        vec {
+                          x: -0.23455458818020225
+                          y: 0.37017854623055191
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.23455458818020225
+                          y: 0.37017854623055191
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.56278939099655956
+                          y: 2.2009479682469384
+                          z: 0
+                        }
+                        vec {
+                          x: -0.12109097984005817
+                          y: 0.49090174602996529
+                          z: 0
+                        }
+                        vec2 {
+                          x: -0.12109097984005817
+                          y: 0.49090174602996529
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 0.64317136459960911
+                          y: 2.6750118124023455
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                    }
+                    force_catmull_rom: true
+                    tension: 0.29999999999999999
+                  }
+                }
+              }
+            }
+            name: "OffBody"
+          }
+        }
+      }
+    }
+  }
+}
+root_op {
+  op {
+    [mit_plato.TranslateOpSpec.spec] {
+      translation {
+        x: 3.5
+      }
+    }
+  }
+  name: "TranslateQueen"
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "Queen"
+    child {
+      op {
+        [mit_plato.UnionOpSpec.spec] {
+        }
+      }
+      name: "UnionQueenBodyAndBase"
+      child {
+        op {
+          [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+            is_solid: true
+            base_curve {
+              encoded_transform: ""
+              [mit_plato.CreateCircleSpec.spec] {
+                radius: 1
+              }
+            }
+            vertical_curve {
+              encoded_transform: ""
+              [mit_plato.CreateHermiteSpec.spec] {
+                curve {
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 0
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 1
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        name: "QueenBase"
+      }
+      child {
+        op {
+          [mit_plato.TranslateOpSpec.spec] {
+            translation {
+              y: 0.10000000000000005
+            }
+          }
+        }
+        name: "TranslateQueenBody"
+        child {
+          op {
+            [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+              is_solid: true
+              base_curve {
+                encoded_transform: ""
+                [mit_plato.CreatePolygonSpec.spec] {
+                  n_sides: 19
+                  radius: 1
+                }
+              }
+              vertical_curve {
+                encoded_transform: ""
+                [mit_plato.CreateHermiteSpec.spec] {
+                  curve {
+                    control_pt {
+                      pt {
+                        x: 1
+                        y: 0
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.5220525215581509
+                        y: 0.39460619377427176
+                        z: 0
+                      }
+                      vec {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0.16340852490395131
+                        y: 0.36380466064030948
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.3268170498079027
+                        y: 0.72760932128061895
+                        z: 0
+                      }
+                      vec {
+                        x: -0.034006815595741368
+                        y: 0.2834678076334205
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.034006815595741368
+                        y: 0.2834678076334205
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.4540388903666682
+                        y: 0.96154180904111275
+                        z: 0
+                      }
+                      vec {
+                        x: -0.14745924122546938
+                        y: 0.3514886363292783
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.14745924122546938
+                        y: 0.3514886363292783
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 1.0318985673569639
+                        y: 1.4305865939391756
+                        z: 0
+                      }
+                      vec {
+                        x: -0.28142688200647031
+                        y: 0.32833134942864484
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.28142688200647031
+                        y: 0.32833134942864484
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.89118512635372749
+                        y: 1.6182045078984025
+                        z: 0
+                      }
+                      vec {
+                        x: -0.23455458818020213
+                        y: 0.4107057063732178
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.23455458818020213
+                        y: 0.4107057063732178
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.56278939099655956
+                        y: 2.2936627825565524
+                        z: 0
+                      }
+                      vec {
+                        x: -0.12109097984005817
+                        y: 0.74090124602996533
+                        z: 0
+                      }
+                      vec2 {
+                        x: -0.12109097984005817
+                        y: 0.74090124602996533
+                        z: 0
+                      }
+                    }
+                    control_pt {
+                      pt {
+                        x: 0.64317136459960911
+                        y: 3.1750108124023458
+                        z: 0
+                      }
+                      vec {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                      vec2 {
+                        x: 0
+                        y: 0
+                        z: 0
+                      }
+                    }
+                  }
+                  force_catmull_rom: true
+                  tension: 0.29999999999999999
+                }
+              }
+            }
+          }
+          name: "QueenBody"
+        }
+      }
+    }
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            y: 2.8750078124023455
+          }
+        }
+      }
+      name: "TranslateQueenHead"
+      child {
+        op {
+          [mit_plato.UnionOpSpec.spec] {
+          }
+        }
+        name: "QueenHeadUnion"
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: 2
+              }
+            }
+          }
+          name: "TranslateQueenCrownPip"
+          child {
+            op {
+              [mit_plato.ScaleOpSpec.spec] {
+                scale: 0.30000000000000016
+              }
+            }
+            name: "ScaleQueenCrownPip"
+            child {
+              op {
+                [mit_plato.OpenscadCreateOpSpec.spec] {
+                  program_file: ""
+                  program: "sphere(r=1, $fa=5, $fs=0.1);"
+                }
+              }
+              name: "QueenCrownPip"
+            }
+          }
+        }
+        child {
+          op {
+            [mit_plato.SubtractOpSpec.spec] {
+            }
+          }
+          name: "SubtractQueenSpheres"
+          child {
+            op {
+              [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+                thickness: 0.2000000000000001
+                is_solid: false
+                base_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreatePolygonSpec.spec] {
+                    n_sides: 19
+                    radius: 0.5
+                  }
+                }
+                vertical_curve {
+                  encoded_transform: ""
+                  [mit_plato.CreateHermiteSpec.spec] {
+                    curve {
+                      control_pt {
+                        pt {
+                          x: 0.73124636325639603
+                          y: 0.043014490264638106
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.3757074002138122
+                          y: 0.47941319390799775
+                          z: 0
+                        }
+                        vec {
+                          x: 0.13463405481318841
+                          y: 0.36410771518498359
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0.13463405481318841
+                          y: 0.36410771518498359
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.0005144728827729
+                          y: 0.77122992063460528
+                          z: 0
+                        }
+                        vec {
+                          x: 0.052110128795977984
+                          y: 0.56278940154417035
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0.052110128795977984
+                          y: 0.56278940154417035
+                          z: 0
+                        }
+                      }
+                      control_pt {
+                        pt {
+                          x: 1.4799276578057681
+                          y: 1.6049919969963385
+                          z: 0
+                        }
+                        vec {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                        vec2 {
+                          x: 0
+                          y: 0
+                          z: 0
+                        }
+                      }
+                    }
+                    force_catmull_rom: true
+                    tension: 0.29999999999999999
+                  }
+                }
+              }
+            }
+            name: "QueenNeck"
+          }
+          child {
+            op {
+              [mit_plato.ForOpSpec.spec] {
+                var_name: "i"
+                n_iterations: 6
+                assignment {
+                  var {
+                    kind: PARAM
+                    name_space: "RotateQueenSphereCut"
+                    name: "degrees"
+                  }
+                  expr: "360 / $1 * $0"
+                }
+              }
+            }
+            name: "QueenSphereCutLoop"
+            child {
+              op {
+                [mit_plato.RotateOpSpec.spec] {
+                  axis {
+                    y: 1
+                  }
+                  degrees: 300
+                }
+              }
+              name: "RotateQueenSphereCut"
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      y: 1.5
+                      z: 1
+                    }
+                  }
+                }
+                name: "TranslateQueenSphereCut"
+                child {
+                  op {
+                    [mit_plato.ScaleOpSpec.spec] {
+                      scale: 0.43000000000000016
+                    }
+                  }
+                  name: "ScaleQueenSphereCut"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "sphere(r=1, $fa=5, $fs=0.1);"
+                      }
+                    }
+                    name: "QueenSphereCut"
+                  }
+                }
+              }
+            }
+          }
+        }
+        child {
+          op {
+            [mit_plato.TranslateOpSpec.spec] {
+              translation {
+                y: 1.2000000000000007
+              }
+            }
+          }
+          name: "TranslateQueenSphere"
+          child {
+            op {
+              [mit_plato.ScaleOpSpec.spec] {
+                scale: 0.76000000000000035
+              }
+            }
+            name: "ScaleQueenSphere"
+            child {
+              op {
+                [mit_plato.OpenscadCreateOpSpec.spec] {
+                  program_file: ""
+                  program: "sphere(r=1, $fa=5, $fs=0.1);"
+                }
+              }
+              name: "QueenSphere"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+root_op {
+  op {
+    [mit_plato.UnionOpSpec.spec] {
+    }
+  }
+  name: "King"
+  child {
+    op {
+      [mit_plato.TranslateOpSpec.spec] {
+        translation {
+          y: 2.60413411499023
+        }
+      }
+    }
+    name: "TranslateKingHead"
+    child {
+      op {
+        [mit_plato.UnionOpSpec.spec] {
+        }
+      }
+      name: "KingHeadUnion"
+      child {
+        op {
+          [mit_plato.TranslateOpSpec.spec] {
+            translation {
+              y: 2.6000000000000015
+            }
+          }
+        }
+        name: "TranslateCrownCross"
+        child {
+          op {
+            [mit_plato.ScaleOpSpec.spec] {
+              scale: 0.2000000000000001
+            }
+          }
+          name: "ScaleCrownCross"
+          child {
+            op {
+              [mit_plato.RotateOpSpec.spec] {
+                axis {
+                  x: 1
+                }
+                degrees: 270
+              }
+            }
+            name: "RotateCrownCross"
+            child {
+              op {
+                [mit_plato.UnionOpSpec.spec] {
+                }
+              }
+              name: "CrownCrossUnion"
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      x: 1.9000000000000006
+                    }
+                  }
+                }
+                name: "TranslateCrownSphere3"
+                child {
+                  op {
+                    [mit_plato.ScaleOpSpec.spec] {
+                      scale: 0.60000000000000032
+                    }
+                  }
+                  name: "ScaleCrownSphere3"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "sphere(r=1, $fa=5, $fs=0.3);"
+                      }
+                    }
+                    name: "CrownSphere3"
+                  }
+                }
+              }
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      z: 2.8000000000000012
+                    }
+                  }
+                }
+                name: "TranslateCrownSphere2"
+                child {
+                  op {
+                    [mit_plato.ScaleOpSpec.spec] {
+                      scale: 0.60000000000000032
+                    }
+                  }
+                  name: "ScaleCrownSphere2"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "sphere(r=1, $fa=5, $fs=0.3);"
+                      }
+                    }
+                    name: "CrownSphere2"
+                  }
+                }
+              }
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      z: -2.650000001
+                    }
+                  }
+                }
+                name: "TranslateCrownSphere4"
+                child {
+                  op {
+                    [mit_plato.ScaleOpSpec.spec] {
+                      scale: 1.2000000000000007
+                    }
+                  }
+                  name: "ScaleCrownSphere4"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "sphere(r=1, $fa=5, $fs=0.4);"
+                      }
+                    }
+                    name: "CrownSphere4"
+                  }
+                }
+              }
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      x: -1.90000001
+                    }
+                  }
+                }
+                name: "TranslateCrownSphere1"
+                child {
+                  op {
+                    [mit_plato.ScaleOpSpec.spec] {
+                      scale: 0.60000000000000032
+                    }
+                  }
+                  name: "ScaleCrownSphere1"
+                  child {
+                    op {
+                      [mit_plato.OpenscadCreateOpSpec.spec] {
+                        program_file: ""
+                        program: "sphere(r=1, $fa=5, $fs=0.3);"
+                      }
+                    }
+                    name: "CrownSphere1"
+                  }
+                }
+              }
+              child {
+                op {
+                  [mit_plato.TranslateOpSpec.spec] {
+                    translation {
+                      y: -0.25
+                    }
+                  }
+                }
+                name: "Translate2"
+                child {
+                  op {
+                    [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+                      thickness: 1
+                      is_solid: true
+                      base_curve {
+                        encoded_transform: ""
+                        [mit_plato.CreateHermiteSpec.spec] {
+                          curve {
+                            control_pt {
+                              pt {
+                                x: 2
+                                y: 0
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0.70000000000000029
+                                y: 0
+                                z: -0.7000000012
+                              }
+                              vec {
+                                x: -0
+                                y: 0
+                                z: -0
+                              }
+                              vec2 {
+                                x: -0
+                                y: 0
+                                z: -0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0
+                                y: 0
+                                z: -3
+                              }
+                              vec {
+                                x: -0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: -0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: -0.700000029
+                                y: 0
+                                z: -0.70000029
+                              }
+                              vec {
+                                x: -0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: -0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: -2
+                                y: 0
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: -0.70000000029
+                                y: 0
+                                z: 0.70000000000000029
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0
+                                y: 0
+                                z: 3
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0.70000000000000029
+                                y: 0
+                                z: 0.70000000000000029
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 2
+                                y: 0
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: -0
+                              }
+                            }
+                          }
+                          force_catmull_rom: false
+                          tension: 0.29999999999999999
+                        }
+                      }
+                      vertical_curve {
+                        encoded_transform: ""
+                        [mit_plato.CreateHermiteSpec.spec] {
+                          curve {
+                            control_pt {
+                              pt {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0.2000000000000001
+                                y: 0.25
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                            control_pt {
+                              pt {
+                                x: 0
+                                y: 0.5
+                                z: 0
+                              }
+                              vec {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                              vec2 {
+                                x: 0
+                                y: 0
+                                z: 0
+                              }
+                            }
+                          }
+                          tension: 0.29999999999999999
+                        }
+                      }
+                    }
+                  }
+                  name: "KingCrown"
+                }
+              }
+            }
+          }
+        }
+      }
+      child {
+        op {
+          [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+            thickness: 0.2000000000000001
+            is_solid: true
+            base_curve {
+              encoded_transform: ""
+              [mit_plato.CreatePolygonSpec.spec] {
+                n_sides: 19
+                radius: 0.5
+              }
+            }
+            vertical_curve {
+              encoded_transform: ""
+              [mit_plato.CreateHermiteSpec.spec] {
+                curve {
+                  control_pt {
+                    pt {
+                      x: 0.73124636325639603
+                      y: 0.043014490264638106
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.3757074002138122
+                      y: 0.47941319390799775
+                      z: 0
+                    }
+                    vec {
+                      x: 0.13463405481318841
+                      y: 0.36410771518498359
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0.13463405481318841
+                      y: 0.36410771518498359
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.0005144728827729
+                      y: 0.77122992063460528
+                      z: 0
+                    }
+                    vec {
+                      x: -0.01640922752852425
+                      y: 0.6342370186541686
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.01640922752852425
+                      y: 0.6342370186541686
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.3428889451567637
+                      y: 1.747887231216335
+                      z: 0
+                    }
+                    vec {
+                      x: -0.073232945707655705
+                      y: 0.63924335665120436
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.073232945707655705
+                      y: 0.63924335665120436
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 0.85404858146746144
+                      y: 2.0497166339370141
+                      z: 0
+                    }
+                    vec {
+                      x: -0.40455429086979999
+                      y: 0.20429273870244936
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.40455429086979999
+                      y: 0.20429273870244936
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 0.53378036341716362
+                      y: 2.1564727086212337
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                }
+                force_catmull_rom: true
+                tension: 0.29999999999999999
+              }
+            }
+          }
+        }
+        name: "KingNeck"
+      }
+    }
+  }
+  child {
+    op {
+      [mit_plato.UnionOpSpec.spec] {
+      }
+    }
+    name: "UnionKingBodyAndBase"
+    child {
+      op {
+        [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+          is_solid: true
+          base_curve {
+            encoded_transform: ""
+            [mit_plato.CreateCircleSpec.spec] {
+              radius: 1
+            }
+          }
+          vertical_curve {
+            encoded_transform: ""
+            [mit_plato.CreateHermiteSpec.spec] {
+              curve {
+                control_pt {
+                  pt {
+                    x: 1
+                    y: 0
+                    z: 0
+                  }
+                  vec {
+                    x: 0
+                    y: 0
+                    z: 0
+                  }
+                  vec2 {
+                    x: 0
+                    y: 0
+                    z: 0
+                  }
+                }
+                control_pt {
+                  pt {
+                    x: 1
+                    y: 1
+                    z: 0
+                  }
+                  vec {
+                    x: 0
+                    y: 0
+                    z: 0
+                  }
+                  vec2 {
+                    x: 0
+                    y: 0
+                    z: 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      name: "KingBase"
+    }
+    child {
+      op {
+        [mit_plato.TranslateOpSpec.spec] {
+          translation {
+            y: 0.10000000000000005
+          }
+        }
+      }
+      name: "TranslateKingBody"
+      child {
+        op {
+          [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+            thickness: 0.30000000000000016
+            is_solid: true
+            base_curve {
+              encoded_transform: ""
+              [mit_plato.CreatePolygonSpec.spec] {
+                n_sides: 19
+                radius: 1
+              }
+            }
+            vertical_curve {
+              encoded_transform: ""
+              [mit_plato.CreateHermiteSpec.spec] {
+                curve {
+                  control_pt {
+                    pt {
+                      x: 1
+                      y: 0
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.5220525215581509
+                      y: 0.39460619377427176
+                      z: 0
+                    }
+                    vec {
+                      x: 0.16340852490395131
+                      y: 0.36380466064030948
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0.16340852490395131
+                      y: 0.36380466064030948
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.3268170498079027
+                      y: 0.72760932128061895
+                      z: 0
+                    }
+                    vec {
+                      x: -0.034006815595741368
+                      y: 0.2834678076334205
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.034006815595741368
+                      y: 0.2834678076334205
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.4540388903666682
+                      y: 0.96154180904111275
+                      z: 0
+                    }
+                    vec {
+                      x: -0.14745924122546938
+                      y: 0.3514886363292783
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.14745924122546938
+                      y: 0.3514886363292783
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 1.0318985673569639
+                      y: 1.4305865939391756
+                      z: 0
+                    }
+                    vec {
+                      x: -0.28142688200647031
+                      y: 0.32922909547944391
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.28142688200647031
+                      y: 0.32922909547944391
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 0.89118512635372749
+                      y: 1.6200000000000006
+                      z: 0
+                    }
+                    vec {
+                      x: -0.23455458818020213
+                      y: 0.4107057063732178
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.23455458818020213
+                      y: 0.4107057063732178
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 0.56278939099655956
+                      y: 2.2936627825565524
+                      z: 0
+                    }
+                    vec {
+                      x: -0.12109097984005817
+                      y: 0.58999058342013733
+                      z: 0
+                    }
+                    vec2 {
+                      x: -0.12109097984005817
+                      y: 0.58999058342013733
+                      z: 0
+                    }
+                  }
+                  control_pt {
+                    pt {
+                      x: 0.64317136459960911
+                      y: 2.9041371149902302
+                      z: 0
+                    }
+                    vec {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                    vec2 {
+                      x: 0
+                      y: 0
+                      z: 0
+                    }
+                  }
+                }
+                force_catmull_rom: true
+                tension: 0.29999999999999999
+              }
+            }
+          }
+        }
+        name: "KingBody"
+      }
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.5
+      maximum: 0.65000000000000025
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingCrown"
+    name: "base_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingCrown"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KingNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#4:pt:x"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.3000000000000001
+      maximum: 2
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#4:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#5:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 7
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.3000000000000001
+      maximum: 0.80000000000000027
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "OffNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#10:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.5
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#9:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 6
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.3000000000000001
+      maximum: 0.80000000000000027
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 9
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "QueenNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:x"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0.20000000000000007
+      maximum: 1.2000000000000004
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1
+      maximum: 8
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "RookHead"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "SmoothHorse"
+    name: "lambda"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslateKingHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 2.4500000000000011
+      maximum: 5.0500000000000016
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslateKnightHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 1.4500000000000004
+      maximum: 3.0500000000000008
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslateOffHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 2.0500000000000008
+      maximum: 3.9500000000000011
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslatePawnHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 2.850000000000001
+      maximum: 4.1500000000000022
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslateQueenHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 2.75
+      maximum: 4.6500000000000022
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "TranslateRookHead"
+    name: "translation:y"
+  }
+  bounds {
+    double_bounds {
+      minimum: 3.5500000000000008
+      maximum: 5.0500000000000016
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "height_fraction"
+  }
+  bounds {
+    double_bounds {
+      minimum: -1
+      maximum: 2
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "jaggedness"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "king_head_height"
+  }
+  bounds {
+    double_bounds {
+      minimum: 3.2000000000000011
+      maximum: 3.3000000000000008
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "king_height"
+  }
+  bounds {
+    double_bounds {
+      minimum: 5.7999999999999999
+      maximum: 8.1999999999999993
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "n_sides"
+  }
+  bounds {
+    int_bounds {
+      minimum: 6
+      maximum: 25
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "tension"
+  }
+  bounds {
+    double_bounds {
+      minimum: 0
+      maximum: 1
+    }
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "details_density"
+    }
+    type: TYPE_DOUBLE
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "details_scale"
+    }
+    type: TYPE_DOUBLE
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "height_fraction"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 0.041653645996092046
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "jaggedness"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 0.29999999999999999
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "king_head_height"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 3.2700300000000003
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "king_height"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 5.9000000000000004
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "n_sides"
+    }
+    type: TYPE_INT32
+  }
+  val {
+    int_val: 19
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "tension"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 0.29999999999999999
+  }
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: PARAM
+    name_space: "QueenNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "QueenNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingCrown"
+    name: "base_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingCrown"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingNeck"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingNeck"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: META
+    name: "jaggedness"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "less_than"
+  var {
+    kind: META
+    name: "jaggedness"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "(((1 - $0) * 19) + 7)"
+}
+constraint {
+  type: "less_than"
+  var {
+    kind: META
+    name: "jaggedness"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "(((1 - $0) * 19) + 5)"
+  expression: "$1"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$0"
+  expression: "$1"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "SmoothHorse"
+    name: "lambda"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$0"
+  expression: "(1 - $1)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$0"
+  expression: "$1"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookHead"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:tension"
+  }
+  var {
+    kind: META
+    name: "tension"
+  }
+  expression: "$0"
+  expression: "$1"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: META
+    name: "n_sides"
+  }
+  expression: "$0"
+  expression: "$1"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: META
+    name: "king_head_height"
+  }
+  expression: "$0"
+  expression: "3.27004"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  var {
+    kind: META
+    name: "king_height"
+  }
+  expression: "$0"
+  expression: "(($1 - 5.80003) / 2.40004)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslatePawnHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(2.90004 + (1.20006 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslateRookHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(3.60003 + (1.40006 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslateKnightHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(1.5 + (1.5 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslateOffHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(2.10003 + (1.80004 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslateQueenHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(2.80004 + (1.80004 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "TranslateKingHead"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(2.5 + (2.5 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslateKingHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "($1 + 0.300004)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#5:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  expression: "$1"
+  expression: "(((($2 + 0.400003) - $0) * 0.400005) + $0)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(0.649003 - (0.140003 * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslateQueenHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "($1 + 0.300004)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  var {
+    kind: PARAM
+    name_space: "QueenBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KingBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:x"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslateOffHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "($1 + 0.500005)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#5:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "OffBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  expression: "$1"
+  expression: "(((($2 + 0.400005) - $0) * 0.400014) + $0)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslateKnightHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "($1 + 0.400003)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#4:pt:x"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(1.05005 - ((((0.460003 * $1) * $1) * $1) * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#4:pt:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(1.28004 + ((0.340003 * $1) * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#5:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "KnightBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(($1 - 0.200004) - (0.400005 * $2))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  expression: "$0"
+  expression: "($1 - 0.700013)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  expression: "$0"
+  expression: "($1 - 0.250005)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslateRookHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "($1 + 0.100003)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "RookBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:x"
+  }
+  var {
+    kind: META
+    name: "height_fraction"
+  }
+  expression: "$0"
+  expression: "(0.860003 - ((0.200003 * $1) * $1))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#10:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#9:pt:y"
+  }
+  expression: "$1"
+  expression: "($0 - 0.350002)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#9:pt:y"
+  }
+  expression: "$0"
+  expression: "($1 - 0.180002)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#8:pt:y"
+  }
+  expression: "$0"
+  expression: "($1 - 0.390003)"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#5:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#6:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#7:pt:y"
+  }
+  expression: "$1"
+  expression: "($0 + (($2 - $0) * 0.400003))"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "PawnBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#10:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "TranslatePawnHead"
+    name: "translation:y"
+  }
+  expression: "$0"
+  expression: "(($1 * 1.25) - 0.320003)"
+}
+control {
+  handle {
+    kind: META
+    name: "jaggedness"
+  }
+  name: "jaggedness"
+}
+control {
+  handle {
+    kind: META
+    name: "king_height"
+  }
+  name: "king_height"
+}
+global_prop {
+  property_id: "material_volume"
+}
+global_prop {
+  property_id: "stable"
+  bounds {
+    bool_bounds {
+      allowed_value: true
+    }
+  }
+}
+global_prop {
+  property_id: "watertight"
+  bounds {
+    bool_bounds {
+      allowed_value: true
+    }
+  }
+}

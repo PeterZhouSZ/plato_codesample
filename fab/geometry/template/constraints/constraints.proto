@@ -1,0 +1,22 @@
+import "fab/geometry/template/operations.proto";
+
+package mit_plato;
+
+message ConstraintSpec {
+  extensions 4 to max;
+};
+
+message RegisteredConstraintSpec {
+  optional string type = 1;
+
+  repeated VarHandleSpec var = 2;
+
+  repeated string expression = 3;
+
+  // In case constraint has its own config
+  optional ConstraintSpec spec = 4;
+
+  // If set, constaint is only set if this
+  // conditional expression is satisfied
+  optional string conditional_expression = 5;
+};

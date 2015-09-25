@@ -1,0 +1,277 @@
+name: "Simple Glass"
+root_op {
+  op {
+    [mit_plato.UnionOpSpec.spec] {
+    }
+  }
+  name: "Union1"
+  child {
+    op {
+      [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+        is_solid: true
+        base_curve {
+          [mit_plato.CreatePolygonSpec.spec] {
+            n_sides: 8
+            radius: 2.5
+          }
+        }
+        vertical_curve {
+          [mit_plato.CreateHermiteSpec.spec] {
+            curve {
+              control_pt {
+                pt {
+                  x: 1
+                  y: 0
+                  z: 0
+                }
+              }
+              control_pt {
+                pt {
+                  x: 1
+                  y: 0.25
+                  z: 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    name: "GlassBase"
+  }
+  child {
+    op {
+      [mit_plato.TranslateOpSpec.spec] {
+        translation {
+          y: 0.2
+        }
+      }
+    }
+    name: "Translate1"
+    child {
+      op {
+        [mit_plato.CreateRevolvedCurveOpSpec.spec] {
+          thickness: 0.4
+          is_solid: false
+          base_curve {
+            [mit_plato.CreatePolygonSpec.spec] {
+              n_sides: 8
+              radius: 2.5
+            }
+          }
+          vertical_curve {
+            [mit_plato.CreateHermiteSpec.spec] {
+              curve {
+                control_pt {
+                  pt {
+                    x: 1.7040569382900657
+                    y: 0
+                    z: 0
+                  }
+                }
+                control_pt {
+                  pt {
+                    x: 0.417385
+                    y: 1.67583
+                    z: 0
+                  }
+                  vec {
+                    x: 0
+                    y: 1.86
+                    z: 0
+                  }
+                  vec2 {
+                    x: 0
+                    y: 1.57
+                    z: 0
+                  }
+                }
+                control_pt {
+                  pt {
+                    x: 1.7626298975619608
+                    y: 6.8326587719708671
+                    z: 0
+                  }
+                  vec {
+                    x: 0
+                    y: 4.86
+                    z: 0
+                  }
+                }
+              }
+            }
+          }
+          enable_rotation: true
+        }
+      }
+      name: "GlassBody"
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "GlassBase"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      maximum: 10
+      minimum: 3
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  bounds {
+    int_bounds {
+      maximum: 10
+      minimum: 3
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#1:pt:x"
+  }
+  bounds {
+    double_bounds {
+      maximum: 5
+      minimum: 0
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#1:pt:y"
+  }
+  bounds {
+    double_bounds {
+      maximum: 5.0000001
+      minimum: 0
+    }
+  }
+}
+mutable_var {
+  handle {
+    kind: META
+    name: "height"
+  }
+  bounds {
+    double_bounds {
+      maximum: 15
+      minimum: 0
+    }
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "height"
+    }
+    type: TYPE_DOUBLE
+  }
+  val {
+    double_val: 7.0326587719708673
+  }
+}
+metavar {
+  info {
+    handle {
+      kind: META
+      name: "width"
+    }
+    type: TYPE_DOUBLE
+  }
+}
+constraint {
+  type: "less_than"
+  var {
+    kind: META
+    name: "height"
+  }
+  expression: "$0"
+  expression: "10"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#2:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "Translate1"
+    name: "translation:y"
+  }
+  var {
+    kind: META
+    name: "height"
+  }
+  expression: "$2"
+  expression: "($0 + $1)"
+}
+constraint {
+  type: "less_than"
+  var {
+    kind: PARAM
+    name_space: "GlassBase"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#1:pt:y"
+  }
+  var {
+    kind: PARAM
+    name_space: "Translate1"
+    name: "translation:y"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+constraint {
+  type: "equal"
+  var {
+    kind: PARAM
+    name_space: "GlassBase"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  var {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  expression: "$1"
+  expression: "$0"
+}
+control {
+  handle {
+    kind: PARAM
+    name_space: "GlassBase"
+    name: "base_curve:mit_plato.CreatePolygonSpec.spec:n_sides"
+  }
+  name: "n_sides"
+}
+control {
+  handle {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#1:pt:x"
+  }
+  name: "pt1_x"
+}
+control {
+  handle {
+    kind: PARAM
+    name_space: "GlassBody"
+    name: "vertical_curve:mit_plato.CreateHermiteSpec.spec:curve:control_pt#1:pt:y"
+  }
+  name: "pt1_y"
+}

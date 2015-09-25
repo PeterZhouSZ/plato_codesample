@@ -1,0 +1,2 @@
+Note: most of the data files, geometry templates encoded in files, have been removed.
+See chess_set.ascii_proto for illustration of the geometry_template encoding in a file.

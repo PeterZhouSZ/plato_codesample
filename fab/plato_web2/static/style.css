@@ -1,0 +1,344 @@
+.val-cont {
+    position: relative;
+    width: 100%;
+    height: 20px;
+}
+
+.val {
+    position: absolute;
+    bottom: 5px;
+    color: #FF4D4D;
+    margin-left: -15px;
+    font-weight: 700;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Quicksand, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main {
+    position: relative;
+    margin-right: 350px;
+    min-height: 400px;
+    height: 100%;
+}
+
+.sidebar {
+  position: absolute;
+  width: 350px;
+  top: 65px;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+#preview-window {
+/*  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;*/
+    width: 100%;
+    height: 100%;
+}
+
+/*#preview-window canvas { width: 100%; height: 100% };*/
+
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.seed-cont {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 5pt;
+    font-style: italic;
+    color: #777777;
+    position: relative;
+}
+
+.seed-cont img {
+    height: 80px;
+}
+
+.seed-txt {
+    text-align: center;
+}
+
+.plusminus {
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.control {
+    position: relative;
+    height: 95px;
+}
+
+.costs, .control {
+    margin: 10px 0;
+    border-bottom: dotted 1px #aaa;
+
+}
+
+#controls:last-child {
+    border-bottom: none;
+}
+
+.panel-body {
+    padding: 10px 15px 0 15px;
+}
+
+#materials {
+    margin-bottom: 10px;
+}
+
+.control .name,
+.costs .name {
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.costs .name {
+    text-align: left;
+}
+
+.costs .name span {
+    color: #333;
+    font-size: 110%;
+}
+
+.slider-outer {
+    position: relative;
+}
+
+.slider-outer .min,
+.slider-outer .max {
+    width: 20px;
+    position: absolute;
+    top: 0;
+    font-size: small;
+    color: #999;
+    font-weight: bold;
+}
+
+.slider-outer .min {
+    left: 0;
+    text-align: right;
+}
+
+.slider-outer .max {
+    right: 0;
+    text-align: left;
+}
+
+.slider-inner {
+    margin: 0 25px;
+    position: relative;
+}
+
+.tickmarks {
+    position: absolute;
+    width: 100%;
+    height: 24px;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+}
+
+.slider {
+    z-index: 10;
+    width: 100%;
+    height: 20px;
+    background-image: url("ticks.png");
+    background-repeat: repeat-x;
+    background-position: 0 -50px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    position: relative;
+}
+
+.slider .range {
+    z-index: 15;
+    position: absolute;
+    background-image: url("ticks.png");
+    background-repeat: repeat-x;
+    background-position: 0 -80px;
+    height: 100%;
+    box-shadow: inset 0 0 15px #333;
+}
+
+.rg1 {
+    left: 15%;
+    width: 20%;
+}
+
+
+.rg2 {
+    left: 55%;
+    width: 30%;
+}
+
+.ui-slider-handle,
+.tickmark {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: 20;
+    background-image: url("ticks.png");
+    background-position: 0 -110px;
+    height: 72px;
+    width: 31px;
+    cursor: pointer;
+    outline: none;
+    margin-left: -14px;
+}
+
+.ui-slider-handle:hover,
+.tickmark:hover {
+    background-position: -33px -110px;
+}
+
+.ui-slider-handle:active,
+.tickmark:active {
+    background-position: -66px -110px;
+}
+
+.curval {
+    margin: 22px 0;
+    color: #888;
+    font-size: 8pt;
+}
+
+.panel-heading {
+    font-size:130%;
+    color: #999;
+}
+
+.my-header-elem {
+    float: left;
+    padding: 15px 15px 15px 0;
+    height: 65px;
+    vertical-align: middle;
+}
+
+.my-header-elem span {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.my-header-elem img {
+    height: 30px;
+    vertical-align: middle;
+}
+
+#name {
+    font-size: 180%;
+    font-weight: bold;
+    border-left: 1px solid #e7e7e7;
+    padding-left: 15px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.topbar {
+    position: absolute;
+    top: -1px;
+    z-index: 15;
+    left: 60px;
+}
+
+#userstudy {
+    position: absolute;
+    top: 1px;
+    right: 50px;
+}
+
+#valid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pt-control {
+    z-index: 15;
+    position: absolute;
+    background-image: url("ticks.png");
+    background-repeat: none;
+    background-position: 0 -146px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15;
+    left: 15;
+    cursor: pointer;
+}
+
+.pt-control:hover,
+.tickmark:hover {
+    background-position: -33px -146px;
+}
+
+.pt-control:active,
+.tickmark:active {
+    background-position: -66px -146px;
+}
+
+.pt-edit-overlay {
+    position: absolute;
+    top: 150px;
+    right: 315px;
+    background-image: url("ptedit.png");
+    height: 180px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.pt-edit-off {
+    background-position: -1px 0;
+}
+
+.pt-edit-off:hover {
+    background-position: -81px 0;
+}
+
+.pt-edit-on {
+    background-position: -161px 0;
+}
+
+.pt-edit-on:hover {
+    background-position: -241px 0;
+}

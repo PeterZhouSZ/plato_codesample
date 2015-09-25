@@ -1,0 +1,263 @@
+import "fab/geometry/template/operations.proto";
+import "fab/geometry/template/constraints.proto";
+
+package mit_plato;
+
+// BOUNDS ----------------------------------------------------------------------
+
+// Specifies the range of supported variable types
+message BoundsSpec {
+  message IntSpec {
+    // minimum[i], maximum[i] forms a single valid interval
+    repeated int32 minimum = 1;
+    repeated int32 maximum = 2;
+  };
+
+  message DoubleSpec {
+    // minimum[i], maximum[i] forms a single valid interval
+    repeated double minimum = 1;
+    repeated double maximum = 2;
+  };
+
+  message BoolSpec {
+    required bool allowed_value = 1;
+  };
+
+  optional IntSpec int_bounds = 1;
+  optional DoubleSpec double_bounds = 2;
+  optional BoolSpec bool_bounds = 3;
+};
+
+// GEO CACHE -------------------------------------------------------------------
+
+message GeoDependencyGraphSpec {
+  message NodeId {
+    required int32 id = 1;
+    required string key = 2;
+  };
+  repeated NodeId dict = 1;
+
+  message Node {
+    required int32 id = 1;
+    repeated int32 child = 2;
+    repeated int32 parent = 3;
+    optional int32 n_evals = 4 [default = 0];
+    optional double ave_ms = 5 [default = 0];
+    optional double memory = 6 [default = 0];
+    optional bool is_root = 7 [default = false];
+
+    // Samples that resulted in this node being evaled
+    repeated string sample = 8;
+  };
+  repeated Node node = 2;
+
+  optional int32 valid_samples = 3;
+};
+
+message SubtreeCachingInfo {
+  optional string key = 1;
+  optional string file = 2;
+  optional double space = 3;
+  repeated double time = 4;
+  repeated string root_name = 5;
+  repeated string sample_key = 6;
+
+  optional double average_time = 7 [default = 0];
+  optional int32 num_evals = 8 [default = 0];
+};
+
+message SubtreesCacheSpec {
+  repeated SubtreeCachingInfo subtree = 1;
+
+  optional string opt_cache_keys_file = 2;
+};
+
+// CHECKS ----------------------------------------------------------------------
+
+message PropEvaluatorSpec {
+  required string property_id = 1;
+
+  // If set, determines the range of valid property values
+  optional BoundsSpec bounds = 2;
+};
+
+message PropertyValuesSpec {
+  repeated MetavariableSpec prop = 1;
+
+  optional bool are_valid = 2;
+
+  optional string key = 3;
+
+  optional string debug_message = 4;
+
+  repeated SubtreeCachingInfo subtree_info = 5;
+
+  optional bool not_yet_processed = 6 [default = false];
+};
+
+// Used as a conveniece inside C++, not usually written to file
+message PropertySummarySpec {
+  optional bool all_valid = 1 [default = false];
+
+  optional bool constraints_ok = 2;
+  optional bool generate_mesh_ok = 3;
+  optional bool is_watertight = 4;
+  optional bool is_stable = 5;
+
+  optional double material_volume = 6 [default = 0];
+  optional bool simulation_ok = 7;
+  optional double shape_diameter = 8;
+  optional bool too_thin = 9;
+};
+
+message ThresholdSpec {
+  optional VarInfoSpec.VarType type = 1;
+
+  optional AnyValueSpec value = 2;
+
+  optional int32 dimension_id = 3;
+};
+
+// DESIGN SPACE PRECOMPUTATION -------------------------------------------------
+
+message GridLookupSpec {
+  optional string control_names = 1;
+  repeated string cuts = 2;
+  optional string samples_file = 3;
+};
+
+message GeoDeltasSpec {
+  message Entry {
+    optional string sample_id1 = 1;
+    optional string sample_id2 = 2;
+    optional double value = 3;
+  };
+
+  repeated Entry delta = 1;
+};
+
+message HybridLookupSpec {
+  // Specific to HybridLookup
+  message HypercuboidSpec {
+    optional string min_sample_id = 1;
+    optional string max_sample_id = 2;
+    repeated string sample_id = 3;
+
+    optional ThresholdSpec thresh = 4;
+    optional HypercuboidSpec left = 5;
+    optional HypercuboidSpec right = 6;
+  };
+
+
+  optional GridLookupSpec grid_spec = 1;
+  optional string adaptive_samples_file = 2;
+  repeated HypercuboidSpec cuboid = 3;
+  optional GeoDeltasSpec geo_deltas = 4;
+};
+
+// OP NODE ---------------------------------------------------------------------
+
+// Operations tree
+message OpNodeProto {
+  required RegisteredOpSpec op = 1;
+  optional string name = 2;
+  optional string suggested_name = 3;
+
+  repeated OpNodeProto child = 4;
+
+  // TODO: add when need node-level checks
+  // repeated PropEvaluatorSpec prop = 5;
+};
+
+// STATS -----------------------------------------------------------------------
+
+message LookupStatsProto {
+  message RegionStatsProto {
+    repeated string sample = 1;
+    optional string seed_sample = 2;
+    optional string center_sample = 3;
+    optional double radius = 4;
+  };
+
+  repeated RegionStatsProto region = 1;
+};
+
+// CUSTOMIZER COMMANDS ---------------------------------------------------------
+
+// Output commands
+// Set control
+// Started getting preview at
+// Finished getting preview at
+// Clicked on seed
+
+// Viewer commands
+// Set control (and intervals)
+// Set preview pt to pulse
+// Stop preview pt pulse
+// Switch to graph view
+// Highlight graph component
+message CustomizerCommands {
+  message CustomizerCommand {
+    optional double time_ms = 1;
+    optional string command = 2;
+    optional string args = 3;
+  };
+
+  repeated CustomizerCommand command = 1;
+};
+
+// CUSTOMIZER ------------------------------------------------------------------
+
+message CustomizerSpec {
+  optional string template_filename = 1; // relative to --data_dir
+
+  optional GridLookupSpec grid_lookup_spec = 2;
+
+  optional HybridLookupSpec hybrid_lookup_spec = 3;
+
+  optional string subtrees_lookup_filename = 4; // relative to --precomp_dir
+
+  optional string geometry_dir = 5; // relative to --precomp_dir
+
+  repeated string start_sample = 6;
+
+  optional string lookup_stats_filename = 7;
+};
+
+// TEMPLATE --------------------------------------------------------------------
+
+// Specifies the name of a mutable parameter and its range
+message MutableVariableSpec {
+  required VarHandleSpec handle = 1;
+  optional BoundsSpec bounds = 2;
+};
+
+message ControlSpec {
+  required VarHandleSpec handle = 1;
+  optional string name = 2;
+
+  // A somewhat hacky solution to allow assigning names
+  // to integer variables in the UI.
+  message ControlValueAlias {
+    required int32 value = 1;
+    required string display = 2;
+  };
+
+  repeated ControlValueAlias alias = 3;
+};
+
+message FabTemplateProto {
+  repeated OpNodeProto root_op = 1;
+
+  repeated MutableVariableSpec mutable_var = 2;
+
+  repeated MetavariableSpec metavar = 3;
+
+  repeated RegisteredConstraintSpec constraint = 4;
+
+  repeated ControlSpec control = 5;
+
+  repeated PropEvaluatorSpec global_prop = 6;
+
+  optional string name = 7;
+};
